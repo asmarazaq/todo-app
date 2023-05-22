@@ -1,0 +1,19 @@
+.completed {
+    text-decoration: line-through;
+    background-color: #b3ffb3; 
+
+  }
+  
+  li {
+    background-color: #fff; 
+  }
+  h1{
+    background-color: purple;
+    font-style: italic;
+  }
+  button {
+    color:coral;
+  }
+  input{
+    color: blueviolet;
+  }

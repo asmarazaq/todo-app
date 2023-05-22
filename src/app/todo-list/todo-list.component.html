@@ -1,0 +1,24 @@
+<h1>Todo List</h1>
+
+<div>
+  <input type="text" placeholder="Filter tasks" [(ngModel)]="filterText" (input)="applyFilter()">
+</div>
+
+<ul>
+  <li *ngFor="let todo of filteredTodos; let i = index" [ngClass]="{ 'completed': todo.completed }">
+    <span [class.completed]="todo.completed">{{ todo.task }}</span>
+    <button (click)="removeTask(i)">x</button>
+    <button (click)="toggleComplete(todo)">Complete</button>
+    <button (click)="editTask(todo)">Edit</button>
+    <button (click)="saveTask(todo)">Save</button>
+  </li>
+</ul>
+
+<div *ngIf="isListEmpty()">
+  <p>Congratulations! The list is empty or all items are complete.</p>
+</div>
+
+<div>
+  <input type="text" placeholder="Add new task" [(ngModel)]="newTask">
+  <button (click)="addTask()">Add</button>
+</div>
